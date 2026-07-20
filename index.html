@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>APC WiFi Access</title>
+
+<style>
+
 body{
     background:#111;
     color:white;
@@ -56,3 +66,102 @@ button{
     background:#0078d7;
     color:white;
 }
+
+button:hover{
+    background:#005ea6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="alert">
+⚠️ APC SECURITY ALERT ⚠️
+</div>
+
+<div class="message">
+Suspicious activity detected.
+</div>
+
+<div class="message">
+Scanning phone...
+</div>
+
+<div class="message">
+Checking photos...
+</div>
+
+<div class="message">
+Checking browser history...
+</div>
+
+<div class="message">
+Contacting APC Cyber Security Team...
+</div>
+
+<div id="countdown">5</div>
+
+<div id="result">
+
+    <div class="success">
+        😄 JUST KIDDING!
+    </div>
+
+    <div class="message">
+        No threats detected.
+    </div>
+
+    <div class="message">
+        Welcome to Australian Paramedical College
+    </div>
+
+    <div class="message">
+        APC-WIFI Password
+    </div>
+
+    <div class="password-box">
+        %ApcFuture1$
+    </div>
+
+    <br>
+
+    <button onclick="copyPassword()">
+        📋 Copy Password
+    </button>
+
+</div>
+
+<script>
+
+let count = 5;
+
+const timer = setInterval(() => {
+
+    count--;
+
+    document.getElementById("countdown").innerText = count;
+
+    if(count <= 0){
+
+        clearInterval(timer);
+
+        document.getElementById("countdown").style.display = "none";
+
+        document.getElementById("result").style.display = "block";
+    }
+
+}, 1000);
+
+function copyPassword() {
+
+    navigator.clipboard.writeText("%ApcFuture1$");
+
+    alert("Password copied to clipboard!");
+
+}
+
+</script>
+
+</body>
+</html>
