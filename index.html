@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>APC Wi-Fi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-            background: #111;
-            color: white;
-        }
+<meta charset="UTF-8">
+<title>APC WiFi Access</title>
 
-        #countdown {
-            font-size: 80px;
-            color: red;
-        }
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    padding-top:100px;
+}
 
-        #result {
-            display: none;
-        }
-    </style>
+#countdown{
+    font-size:120px;
+    color:#ff3b3b;
+    font-weight:bold;
+}
+
+#password{
+    display:none;
+}
+
+.password{
+    background:#00aa44;
+    padding:20px;
+    border-radius:10px;
+    display:inline-block;
+    font-size:32px;
+    margin-top:20px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>⚠️ CRITICAL SECURITY ALERT ⚠️</h1>
-<p>Your device has been infected.</p>
+<h1>⚠️ APC SECURITY ALERT ⚠️</h1>
+
+<p>Suspicious activity detected.</p>
+<p>Scanning device...</p>
 
 <div id="countdown">5</div>
 
-<div id="result">
+<div id="password">
     <h1>😄 Just kidding!</h1>
-    <h2>Welcome to APC</h2>
 
-    <h3>APC-WIFI Password:</h3>
-    <h1>%ApcFuture1$</h1>
+    <p>No threats detected.</p>
+
+    <h2>APC-WIFI Password</h2>
+
+    <div class="password">
+        %ApcFuture1$
+    </div>
 </div>
 
 <script>
@@ -41,14 +60,14 @@ let count = 5;
 
 const timer = setInterval(() => {
     count--;
-    document.getElementById("countdown").innerText = count;
+    document.getElementById('countdown').innerText = count;
 
-    if (count <= 0) {
+    if(count <= 0){
         clearInterval(timer);
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("result").style.display = "block";
+        document.getElementById('countdown').style.display='none';
+        document.getElementById('password').style.display='block';
     }
-}, 1000);
+},1000);
 </script>
 
 </body>
