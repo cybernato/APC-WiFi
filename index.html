@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>APC Wi-Fi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background: #111;
+            color: white;
+        }
+
+        #countdown {
+            font-size: 80px;
+            color: red;
+        }
+
+        #result {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>⚠️ CRITICAL SECURITY ALERT ⚠️</h1>
+<p>Your device has been infected.</p>
+
+<div id="countdown">5</div>
+
+<div id="result">
+    <h1>😄 Just kidding!</h1>
+    <h2>Welcome to APC</h2>
+
+    <h3>APC-WIFI Password:</h3>
+    <h1>%ApcFuture1$</h1>
+</div>
+
+<script>
+let count = 5;
+
+const timer = setInterval(() => {
+    count--;
+    document.getElementById("countdown").innerText = count;
+
+    if (count <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("result").style.display = "block";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
