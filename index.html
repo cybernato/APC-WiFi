@@ -2,72 +2,162 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>APC WiFi Access</title>
 
 <style>
 body{
     background:#111;
     color:white;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     text-align:center;
-    padding-top:100px;
+    margin:0;
+    padding:40px;
 }
 
-#countdown{
-    font-size:120px;
-    color:#ff3b3b;
+.alert{
+    font-size:70px;
+    color:#ff3333;
     font-weight:bold;
 }
 
-#password{
+.message{
+    font-size:40px;
+    margin-top:30px;
+}
+
+#countdown{
+    font-size:220px;
+    color:#ff3333;
+    font-weight:bold;
+    margin-top:30px;
+}
+
+#result{
     display:none;
 }
 
-.password{
+.success{
+    font-size:70px;
+    color:#00ff66;
+    font-weight:bold;
+}
+
+.password-box{
     background:#00aa44;
-    padding:20px;
-    border-radius:10px;
+    padding:30px;
+    border-radius:15px;
     display:inline-block;
-    font-size:32px;
-    margin-top:20px;
+    margin-top:30px;
+    font-size:55px;
+    font-weight:bold;
+}
+
+button{
+    margin-top:25px;
+    padding:20px 40px;
+    font-size:28px;
+    cursor:pointer;
+    border:none;
+    border-radius:10px;
+    background:#0078d7;
+    color:white;
+}
+
+button:hover{
+    background:#005ea6;
 }
 </style>
 </head>
 
 <body>
 
-<h1>⚠️ APC SECURITY ALERT ⚠️</h1>
+<div class="alert">
+⚠️ APC SECURITY ALERT ⚠️
+</div>
 
-<p>Suspicious activity detected.</p>
-<p>Scanning device...</p>
+<div class="message">
+Suspicious activity detected.
+</div>
+
+<div class="message">
+Scanning phone...
+</div>
+
+<div class="message">
+Checking photos...
+</div>
+
+<div class="message">
+Checking browser history...
+</div>
+
+<div class="message">
+Contacting APC Cyber Security Team...
+</div>
 
 <div id="countdown">5</div>
 
-<div id="password">
-    <h1>😄 Just kidding!</h1>
+<div id="result">
 
-    <p>No threats detected.</p>
+    <div class="success">
+        😄 JUST KIDDING!
+    </div>
 
-    <h2>APC-WIFI Password</h2>
+    <div class="message">
+        No threats were detected.
+    </div>
 
-    <div class="password">
+    <div class="message">
+        Welcome to Australian Paramedical College
+    </div>
+
+    <div class="message">
+        APC-WIFI Password
+    </div>
+
+    <div class="password-box" id="password">
         %ApcFuture1$
     </div>
+
+    <br>
+
+    <button onclick="copyPassword()">
+        📋 Copy Password
+    </button>
+
 </div>
 
 <script>
+
 let count = 5;
 
 const timer = setInterval(() => {
+
     count--;
-    document.getElementById('countdown').innerText = count;
+
+    document.getElementById("countdown").innerText = count;
 
     if(count <= 0){
+
         clearInterval(timer);
-        document.getElementById('countdown').style.display='none';
-        document.getElementById('password').style.display='block';
+
+        document.getElementById("countdown").style.display = "none";
+
+        document.getElementById("result").style.display = "block";
     }
-},1000);
+
+}, 1000);
+
+function copyPassword(){
+
+    navigator.clipboard.writeText("%ApcFuture1$");
+
+    alert("Password copied to clipboard!");
+
+}
+
 </script>
 
 </body>
